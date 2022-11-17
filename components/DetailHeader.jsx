@@ -1,9 +1,13 @@
 import { useRouter } from 'next/router';
-import React from 'react';
+
 import { inter, josefin } from '../utils/fonts';
+import { FastAverageColor } from 'fast-average-color';
+import { useEffect, useRef } from 'react';
 
 const DetailHeader = ({ hero }) => {
   const router = useRouter();
+  const fac = new FastAverageColor();
+  const container = useRef();
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -11,11 +15,26 @@ const DetailHeader = ({ hero }) => {
     router.push('/');
   };
 
+  useEffect(() => {
+    fac
+      .getColorAsync(
+        `${hero.thumbnail.path}/portrait_uncanny.${hero.thumbnail.extension}`
+      )
+      .then((color) => {
+        container.current.style.backgroundColor = color.hex;
+        container.current.style.color = color.isDark ? '#fff' : '#000';
+      })
+      .catch((e) => console.log(e));
+  }, []);
+
   return (
-    <div className="mobile:w-screen laptop:w-full laptop:h-[450px] bg-black opacity-95">
+    <div
+      ref={container}
+      className={`mobile:w-screen laptop:w-full laptop:h-[450px] opacity-95`}
+    >
       <p
         onClick={handleClick}
-        className={`text-white hover:cursor-pointer mobile:mx-6 laptop:mx-24 pt-12 w-24 font-semibold text-xl hover:text-gray-600 ${josefin.className}`}
+        className={`hover:cursor-pointer mobile:mx-6 laptop:mx-24 pt-12 w-24 font-semibold text-xl hover:text-gray-600 ${josefin.className}`}
       >
         ← Back
       </p>
@@ -26,18 +45,16 @@ const DetailHeader = ({ hero }) => {
           alt={hero.name}
         />
         <div className="flex flex-col mobile:pb-12 mobile:gap-2 laptop:gap-4">
-          <p
-            className={`text-gray-600 mobile:text-sm font-bold ${josefin.className}`}
-          >
+          <p className={`mobile:text-sm font-bold ${josefin.className}`}>
             CHARACTERS
           </p>
           <h1
-            className={`mobile:text-4xl laptop:text-6xl font-bold items-center mt-2 text-white ${josefin.className}`}
+            className={`mobile:text-4xl laptop:text-6xl font-bold items-center mt-2  ${josefin.className}`}
           >
             {hero.name}
           </h1>
           <p
-            className={`text-gray-500 mobile:text-sm mt-2 text-justify tracking-normal ${inter.className}`}
+            className={`mobile:text-sm mt-2 text-justify tracking-normal ${inter.className}`}
           >
             {hero.description === ''
               ? 'This character have no description yet.'
