@@ -3,7 +3,7 @@ import { josefin } from '../utils/fonts';
 
 const NoDataAvailable = () => {
   return (
-    <div className="mobile:-ml-4 mobile:h-screen flex flex-col justify-center w-screen laptop:h-[480px]">
+    <div className="mobile:-ml-4 mobile:h-screen mobile:relative mobile:min-h-full flex flex-col justify-center w-screen laptop:h-[480px]">
       <p
         className={`${josefin.className} mobile:text-sm laptop:text-gray-400 uppercase text-center font-semibold laptop:text-xl`}
       >
