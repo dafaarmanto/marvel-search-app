@@ -19,7 +19,7 @@ const DetailHeader = ({ hero }) => {
       >
         ← Back
       </p>
-      <div className="flex flex-row mobile:gap-6 laptop:gap-12 mobile:mx-6 laptop:mx-24 mobile:pt-6 laptop:pt-16 items-center">
+      <div className="flex laptop:flex-row mobile:flex-col mobile:items-start mobile:mt-4 mobile:gap-6 laptop:gap-12 mobile:mx-6 laptop:mx-24 mobile:pt-6 laptop:pt-16 laptop:items-center">
         <img
           className="object-cover notched mobile:w-[120px] mobile:h-[120px] laptop:w-[240px] laptop:h-[240px]"
           src={`${hero.thumbnail.path}/portrait_uncanny.${hero.thumbnail.extension}`}
@@ -37,7 +37,7 @@ const DetailHeader = ({ hero }) => {
             {hero.name}
           </h1>
           <p
-            className={`text-gray-500 mobile:text-sm mt-2 tracking-normal ${inter.className}`}
+            className={`text-gray-500 mobile:text-sm mt-2 text-justify tracking-normal ${inter.className}`}
           >
             {hero.description === ''
               ? 'This character have no description yet.'
