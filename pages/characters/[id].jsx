@@ -16,8 +16,6 @@ const DetailPage = ({ title, description }) => {
   useEffect(() => {
     getComics(id).then((data) => setComics(data));
     getDataByID(id).then((data) => setHero(data[0]));
-
-    console.log(comics);
   }, []);
 
   if (!hero) return;
