@@ -5,7 +5,6 @@ import { getDataByID, getComics } from '../api/hello';
 
 import DetailComicsList from '../../components/DetailComicsList';
 import DetailHeader from '../../components/DetailHeader';
-import Footer from '../../components/Footer';
 
 const DetailPage = ({ title, description }) => {
   const [hero, setHero] = useState();

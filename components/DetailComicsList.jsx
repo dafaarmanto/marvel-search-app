@@ -1,5 +1,6 @@
 import React from 'react';
 import { inter, josefin } from '../utils/fonts';
+import Footer from './Footer';
 
 const DetailComicsList = ({ comics }) => {
   return (
