@@ -50,7 +50,7 @@ const Homepage = ({ characters, setCharacters }) => {
           </div>
           <Input setter={setCharacters} />
         </div>
-        <div className="mobile:grid-cols-3 mobile:grid laptop:flex laptop:flex-row mt-6 laptop:gap-x-0">
+        <div className="mobile:grid-cols-3 mobile:h-[80vh] mobile:grid mobile:gap-4 mobile:gap-y-2 laptop:h-[68vh] laptop:flex laptop:flex-row mt-6 laptop:gap-x-0">
           {characters.length > 0 ? cards : <NoDataAvailable />}
         </div>
         <Footer />
