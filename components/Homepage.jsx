@@ -30,9 +30,9 @@ const Homepage = ({ characters, setCharacters }) => {
   }
 
   return (
-    <div>
-      <div className="laptop:mx-24 mobile:mx-4">
-        <div className="flex flex-row justify-between items-center mt-4">
+    <div className="h-screen">
+      <div className="laptop:mx-24 mobile:mx-4 h-screen">
+        <div className="flex flex-row justify-between items-center mobile:pt-2 laptop:pt-8">
           <div className="flex flex-row items-center gap-8 mt-4">
             <a href="http://marvel.com" target="_blank" rel="noreferrer">
               <Image
@@ -50,11 +50,11 @@ const Homepage = ({ characters, setCharacters }) => {
           </div>
           <Input setter={setCharacters} />
         </div>
-        <div className="mobile:grid-cols-3 mobile:grid mobile:h-[100vh] laptop:flex laptop:flex-row mt-6 laptop:gap-x-0 laptop:h-full">
+        <div className="mobile:grid-cols-3 mobile:grid laptop:flex laptop:flex-row mt-6 laptop:gap-x-0">
           {characters.length > 0 ? cards : <NoDataAvailable />}
         </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 };
