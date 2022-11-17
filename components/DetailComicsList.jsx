@@ -36,6 +36,7 @@ const DetailComicsList = ({ comics }) => {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

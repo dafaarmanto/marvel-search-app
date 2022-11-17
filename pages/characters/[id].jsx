@@ -31,7 +31,6 @@ const DetailPage = ({ title, description }) => {
       </Head>
       <DetailHeader hero={hero} />
       <DetailComicsList comics={comics} />
-      <Footer />
     </div>
   );
 };
