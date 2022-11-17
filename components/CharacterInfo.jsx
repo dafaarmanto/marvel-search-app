@@ -3,7 +3,7 @@ import { josefin } from '../utils/fonts';
 
 const CharacterInfo = ({ image, alt, name, id, path }) => {
   return (
-    <div className="flex flex-col mobile:w-[120px] laptop:w-[184px] mt-4">
+    <div className="flex flex-col mobile:w-[100px] laptop:w-[184px] mt-4">
       <img
         className="mobile:w-[120px] mobile:h-[120px] object-cover notched laptop:w-[184px] laptop:h-[374px]"
         src={image}
