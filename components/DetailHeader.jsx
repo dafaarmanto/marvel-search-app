@@ -43,6 +43,7 @@ const DetailHeader = ({ hero }) => {
           className="object-cover notched mobile:w-[120px] mobile:h-[120px] laptop:w-[240px] laptop:h-[240px]"
           src={`${hero.thumbnail.path}/portrait_uncanny.${hero.thumbnail.extension}`}
           alt={hero.name}
+          loading="lazy"
         />
         <div className="flex flex-col mobile:pb-12 mobile:gap-2 laptop:gap-4">
           <p className={`mobile:text-sm font-bold ${josefin.className}`}>

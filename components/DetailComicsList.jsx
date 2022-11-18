@@ -18,6 +18,7 @@ const DetailComicsList = ({ comics }) => {
                 className="object-cover notched mobile:w-[120px] mobile:h-[120px] laptop:w-[1024px] laptop:h-[304px]"
                 src={`${comic.thumbnail.path}/portrait_xlarge.${comic.thumbnail.extension}`}
                 alt={comic.title}
+                loading="lazy"
               />
               <p
                 className={`break-words hover:text-red-600 pr-4 mobile:text-sm laptop:text-md font-semibold mt-4 ${josefin.className}`}
