@@ -8,6 +8,7 @@ const CharacterInfo = ({ image, alt, name, id, path }) => {
         className="mobile:w-[120px] mobile:h-[120px] object-cover notched laptop:w-[184px] laptop:h-[374px]"
         src={image}
         alt={alt}
+        loading="lazy"
       />
       <Link href={`/characters/${path}`} key={id}>
         <p
