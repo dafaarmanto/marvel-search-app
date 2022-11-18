@@ -26,8 +26,6 @@ const Homepage = ({ characters, setCharacters }) => {
           alt={hero.name}
         />
       ));
-  } else {
-    cards = <p>No data available!</p>;
   }
 
   return (

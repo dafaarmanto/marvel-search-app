@@ -15,7 +15,7 @@ export const getData = async (name) => {
 
   const results = await res.json();
 
-  return results.data.results;
+  return results?.data?.results;
 };
 
 export const getDataByID = async (id) => {
