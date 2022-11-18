@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { getData } from '../pages/api/hello';
 import { josefin } from '../utils/fonts';
 
-const Input = ({ setter }) => {
+const Input = ({ setter, setEachInput }) => {
   let input = useRef('');
 
   const handleClick = async (e) => {
@@ -12,6 +12,7 @@ const Input = ({ setter }) => {
     let characters = await getData(value);
 
     setter(characters);
+    setEachInput(value);
   };
 
   return (
