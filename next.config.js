@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-};
-
 module.exports = {
-  nextConfig,
+  reactStrictMode: true,
   images: {
     domains: ['i.annihil.us'],
+  },
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
   },
 };
