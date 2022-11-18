@@ -11,7 +11,7 @@ const Logo = ({ name }) => {
       <h1
         className={`mobile:hidden uppercase laptop:block laptop:font-bold laptop:text-4xl laptop:mt-2 ${josefin.className}`}
       >
-        {name}
+        {name === '' ? 'Characters' : name}
       </h1>
     </div>
   );
