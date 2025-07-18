@@ -10,7 +10,7 @@ const generateHash = (ts) => {
 
 export const getData = async (name) => {
   const timestamp = new Date().getTime();
-  const hash = generateHash(ts);
+  const hash = generateHash(timestamp);
   
   const res = await fetch(
     `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&nameStartsWith=${name}&apikey=${publicKey}&hash=${hash}`
@@ -23,7 +23,7 @@ export const getData = async (name) => {
 
 export const getDataByID = async (id) => {
   const timestamp = new Date().getTime();
-  const hash = generateHash(ts);
+  const hash = generateHash(timestamp);
   
   const res = await fetch(
     `https://gateway.marvel.com:443/v1/public/characters/${id}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
@@ -36,7 +36,7 @@ export const getDataByID = async (id) => {
 
 export const getComics = async (id) => {
   const timestamp = new Date().getTime();
-  const hash = generateHash(ts);
+  const hash = generateHash(timestamp);
   
   const res = await fetch(
     `https://gateway.marvel.com:443/v1/public/characters/${id}/comics?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
