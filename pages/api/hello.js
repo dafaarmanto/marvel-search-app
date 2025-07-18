@@ -10,7 +10,7 @@ const hash = md5(notHash);
 
 export const getData = async (name) => {
   const res = await fetch(
-    `https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${name}&apikey=${publicKey}&hash=${hash}`
+    `https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${name}&apikey=${publicKey}`
   );
 
   const results = await res.json();
@@ -20,7 +20,7 @@ export const getData = async (name) => {
 
 export const getDataByID = async (id) => {
   const res = await fetch(
-    `https://gateway.marvel.com:443/v1/public/characters/${id}?apikey=${publicKey}&hash=${hash}`
+    `https://gateway.marvel.com:443/v1/public/characters/${id}?apikey=${publicKey}`
   );
 
   const results = await res.json();
@@ -30,7 +30,7 @@ export const getDataByID = async (id) => {
 
 export const getComics = async (id) => {
   const res = await fetch(
-    `https://gateway.marvel.com:443/v1/public/characters/${id}/comics?ts=${ts}&apikey=${publicKey}&hash=${hash}`
+    `https://gateway.marvel.com:443/v1/public/characters/${id}/comics?ts=${ts}&apikey=${publicKey}`
   );
 
   const results = await res.json();
